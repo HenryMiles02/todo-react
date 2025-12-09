@@ -1,0 +1,111 @@
+import React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import Icon from "./icon";
+import Skeleton from "./skeleton";
+import SpinnerIcon from "../assets/icons/spiner.svg?react"
+
+export const buttonIconVariants = cva(
+    `
+    inline-flex items-center justify-center cursor-pointer transition group
+    `, {
+        variants: {
+            variant: {
+                none: "",
+                primary: "bg-green-base hover:bg-green-dark",
+                secondary: "bg-pink-base hover:bg-pink-dark",
+                tertiary: "bg-transparent hover:bg-gray-200",
+            },
+            size: {
+                sm: "w-6 h-6 rounded"
+            },
+            disabled: {
+                true: "opacity-50 pointer-events-none"
+            },
+            handling: {
+                true: "pointer-events-none"
+            }
+        },
+        defaultVariants: {
+            variant: "primary",
+            size: "sm",
+            disabled: false,
+            handling: false
+        }
+    }
+)
+
+export const buttonSkeletonVariants = cva("",{
+    variants: {
+        variant: {
+
+        }
+    }
+})
+
+
+interface ButtonIconProps 
+    extends Omit<React.ComponentProps<"button">, "size" | "disabled">, VariantProps<typeof buttonIconVariants> {
+    icon: React.ComponentProps<typeof Icon>["svg"];
+    loading?: boolean;
+    handling?: boolean;
+}
+
+
+export const buttonIconIconVariants = cva("transition", {
+    variants: {
+        variant: {
+            none: "",
+            primary: "fill-white",
+            secondary: "fill-pink-light group-hover:fill-white",
+            tertiary: "fill-gray-300 group-hover:fill-gray-400"
+        },
+        size: {
+            sm: "w-4 h-4"
+        },
+    },
+    defaultVariants: {
+        variant: "primary",
+        size: "sm"
+    }
+})
+
+
+export default function ButtonIcon({
+    variant,
+    size,
+    disabled,
+    loading,
+    handling,
+    className,
+    icon,
+    ...props
+}: ButtonIconProps) {
+    if (loading) {
+        return <Skeleton
+        rounded="sm"
+        className={
+            buttonIconVariants({ 
+                size, 
+                variant: "none", 
+                className,
+            })
+        } />
+    }
+    return (
+        <button
+        className={buttonIconVariants({ 
+            variant, 
+            size, 
+            disabled, 
+            className,
+            handling,
+        })}
+        {...props} 
+        >
+            <Icon 
+            svg={handling ? SpinnerIcon : icon}
+            animate={handling}
+            className={buttonIconIconVariants({ variant, size })} />
+        </button>
+    )
+}
