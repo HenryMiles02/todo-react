@@ -1,73 +1,96 @@
-# React + TypeScript + Vite
+# 📝 Todo List - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de lista de tarefas (To-Do List) desenvolvida em **React**, com o objetivo de praticar e aprofundar os conhecimentos adquiridos durante o curso da Rocketseat.
 
-Currently, two official plugins are available:
+Este projeto foi criado como parte do meu processo de aprendizado, focando na aplicação prática dos conceitos fundamentais do ecossistema React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Sobre o projeto
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+A aplicação permite ao usuário gerenciar suas tarefas do dia a dia de forma simples e intuitiva, incluindo funcionalidades como:
 
-## Expanding the ESLint configuration
+- ✅ Adicionar novas tarefas
+- ✏️ Marcar tarefas como concluídas
+- 🗑️ Remover tarefas
+- 📊 Acompanhamento do progresso (tarefas concluídas vs pendentes)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Projetos de To-Do são amplamente utilizados como base de aprendizado, pois permitem praticar conceitos essenciais como estado, componentização e manipulação da interface :contentReference[oaicite:0]{index=0}.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tecnologias utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React
+- TypeScript
+- Vite
+- Tailwind 
+
+---
+
+## 📚 Aprendizados
+
+Durante o desenvolvimento deste projeto, foram trabalhados conceitos importantes como:
+
+- Componentização
+- Gerenciamento de estado (`useState`)
+- Manipulação de eventos
+- Renderização condicional
+- Boas práticas de organização de código
+
+A formação da Rocketseat é focada justamente na prática com projetos reais, ajudando a consolidar o aprendizado e preparar para o mercado :contentReference[oaicite:1]{index=1}.
+
+---
+
+## 💻 Como executar o projeto
+
+```bash
+# Clone o repositório
+git clone https://github.com/HenryMiles02/todo-react
+
+# Acesse a pasta
+cd todo-react
+
+# Instale as dependências
+npm install
+
+# Execute o projeto
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📸 Preview
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+![Previa do Projeto](./src/assets/images/todo-list.png)
+
+---
+
+## 🎯 Objetivo
+
+Este projeto tem como principal objetivo:
+
+- Consolidar conhecimentos em React
+- Praticar conceitos fundamentais do front-end
+- Servir como peça de portfólio
+
+---
+
+## 📌 Melhorias futuras
+
+ - Persistência de dados (API)
+ - Filtros (todas, concluídas, pendentes)
+ - Responsividade aprimorada
+ - Testes automatizados
+
+---
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins educacionais e de portfólio.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Carlos Henrique**
